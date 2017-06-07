@@ -1,6 +1,82 @@
+<block wx:if="{{isLogin}}">
+  <view class="page">
+    <view class="page__hd">
+    <image class="login-image" src="./user.png" background-size="cover"></image>
+      <view class="page__title">{{loginName}}</view>
+      <view class="page__desc">
+            {{loginLevel}}</view>
+    </view>
+    <view class="page__bd">
+      <view class="weui-cells__title">新消息提醒，管理个人消息动态</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">我的消息</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;"></view>
+            <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">个人主页功能模块，管理订单以及代理人</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">
+            <view style="display: inline-block; vertical-align: middle">我的订单</view>
+            <view class="weui-badge" style="margin-left: 5px;">4</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">
+            <view style="display: inline-block; vertical-align: middle">我的代理</view>
+            <view class="weui-badge" style="margin-left: 5px;">2</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">详细信息</view>
+        </view>
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd">
+            <view style="display: inline-block; vertical-align: middle">更多功能</view>
+            <view class="weui-badge" style="margin-left: 5px;">New</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view>
+      <view class="weui-cells__title logOut"></view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_access">
+          <view class="weui-cell__bd" bindtap="logout">退出登陆</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
+            <view style="display: inline-block;vertical-align:middle; font-size: 17px;"></view>
+           
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="container">
+    <view class="login-from">
+      <view class="logoinfo">
+        <image class="logoInfo-img" src="{{imgUrl}}" background-size="cover"></image>
+        <text class="logoInfo-txt">辽宁联通</text>
+      </view>
 
+      <!--账号-->
+      <view class="inputView">
+        <label class="loginLab">账号</label>
+        <input class="inputText" placeholder="" bindinput="phoneInput" />
+      </view>
+      <view class="line"></view>
 
-
-<view>
-    <text>ttt</text>
-</view>
+      <!--密码-->
+      <view class="inputView">
+        <label class="loginLab">密码</label>
+        <input class="inputText" password="true" placeholder="" bindinput="passwordInput" />
+      </view>
+      <view class="loginBtnView">
+        <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button>
+      </view>
+    </view>
+  </view>
+</block>

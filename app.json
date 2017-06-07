@@ -2,12 +2,30 @@
   "pages":[
     "pages/login/login",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/login/msg_success"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
-  }
+  },
+  "tabBar": {  
+   "color": "#cdcdcd",  
+   "selectedColor": "#c72914",  
+   "borderStyle":"white", 
+   "list": [{  
+     "selectedIconPath": "./selectUser.png",  
+     "iconPath": "./user.png",  
+     "pagePath": "pages/login/login",  
+     "text": "用户"  
+   }, {  
+     "selectedIconPath": "./selectSalary.png",  
+     "iconPath": "./salary.png",  
+     "pagePath": "pages/index/index",  
+     "text": "奖励"  
+   }]  
+ },
+ "debug": true
 }
